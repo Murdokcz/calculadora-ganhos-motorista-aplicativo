@@ -1,8 +1,3 @@
-
-Built by https://www.blackbox.ai
-
----
-
 ```markdown
 # Calculadora de Ganhos - Motorista de Aplicativo
 
@@ -52,11 +47,3 @@ Dependencies are included directly from CDN links in the `index.html` file, so t
 ## Contributing
 Feel free to submit issues or fork the project for your use. For any contributions, please follow best practices for Git and GitHub.
 
-## License
-This project is open-source and available under the MIT License. See the LICENSE file for more information.
-
-## Contact
-For any inquiries or concerns, please reach out via [your-email@example.com].
-```
-
-> Note: Replace "username" and repository name in the clone command with actual values. The email in the contact section should also be updated to reflect your contact information.
