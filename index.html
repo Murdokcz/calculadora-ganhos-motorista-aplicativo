@@ -46,6 +46,8 @@
                 onclick="mostrarCustoKM()">Custo KM</button>
             <button type="button" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600" 
                 onclick="mostrarEstimativas()">Estimativas</button>
+            <button type="button" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+                onclick="mostrarCustoDiario()">Cálculo Custo Diário</button>
         </div>
 
         <!-- Seção Calculadora -->
@@ -55,6 +57,41 @@
                     <label for="data" class="block text-gray-700 font-bold mb-2">Data:</label>
                     <input type="date" id="data" class="w-full px-3 py-2 border rounded" required="">
                 </div>
+
+        <!-- Nova Seção Cálculo Custo Diário -->
+        <div id="custoDiario" class="hidden">
+            <h2 class="text-xl font-bold mb-4">Cálculo Custo Diário</h2>
+            <form id="custoDiarioForm" onsubmit="event.preventDefault(); calcularCustoDiario();">
+                <div class="mb-4">
+                    <label for="aluguelMensal" class="block text-gray-700 font-bold mb-2">Valor aluguel do carro mensal (R$):</label>
+                    <input type="number" id="aluguelMensal" step="0.01" min="0" class="w-full px-3 py-2 border rounded" placeholder="Opcional">
+                </div>
+                <div class="mb-4">
+                    <label for="parcelaFinanciamento" class="block text-gray-700 font-bold mb-2">Valor parcela financiamento do carro mensal (R$):</label>
+                    <input type="number" id="parcelaFinanciamento" step="0.01" min="0" class="w-full px-3 py-2 border rounded" placeholder="Opcional">
+                </div>
+                <div class="mb-4">
+                    <label for="manutencaoMensal" class="block text-gray-700 font-bold mb-2">Custo mensal manutenção (R$):</label>
+                    <input type="number" id="manutencaoMensal" step="0.01" min="0" class="w-full px-3 py-2 border rounded" placeholder="Opcional">
+                </div>
+                <div class="mb-4">
+                    <label for="despesasMensais" class="block text-gray-700 font-bold mb-2">Despesas mensais (almoço, lanches, etc) (R$):</label>
+                    <input type="number" id="despesasMensais" step="0.01" min="0" class="w-full px-3 py-2 border rounded" placeholder="Opcional">
+                </div>
+                <div class="mb-4">
+                    <label for="aluguelSemanal" class="block text-gray-700 font-bold mb-2">Valor aluguel do carro semanal (R$):</label>
+                    <input type="number" id="aluguelSemanal" step="0.01" min="0" class="w-full px-3 py-2 border rounded" placeholder="Opcional">
+                </div>
+                <div class="flex gap-4 mb-6">
+                    <button type="submit" class="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600">Calcular</button>
+                </div>
+            </form>
+            <div id="resultadoCustoDiario" class="hidden mt-6 p-4 bg-gray-100 rounded-lg">
+                <h2 class="text-xl font-bold mb-4">Resultado do Cálculo</h2>
+                <p><strong>Valor total mensal:</strong> <span id="resultadoCustoDiarioMensal"></span></p>
+                <p><strong>Valor total diário:</strong> <span id="resultadoCustoDiarioDiario"></span></p>
+            </div>
+        </div>
 
                 <div class="mb-4">
                     <label for="valorGanho" class="block text-gray-700 font-bold mb-2">Valor ganho no dia (R$):</label>
